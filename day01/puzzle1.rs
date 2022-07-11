@@ -92,6 +92,7 @@ impl Diff {
       }
    }
 }
+
 struct State {
    x: i32,
    y: i32,
@@ -131,6 +132,8 @@ impl State {
 pub fn main() {
    let instructions: Vec<Instruction> = get_parsed_input();
    let state: State = State::from_instructions(instructions);
+   State::print(&state);
+   
    let dist = State::dist_from_origin(state);
    println!("The final taxicab distance from the origin is {}.", dist);
 }
