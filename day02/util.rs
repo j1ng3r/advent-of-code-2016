@@ -31,10 +31,3 @@ pub fn get_input() -> Vec<Vec<Dir>> {
       .expect("Something went wrong reading the file");
    return input.trim().split("\n").map(Dir::from_str).collect();
 }
-
-pub fn option_from_result<T, E>(maybe_x: Result<T, E>) -> Option<T> {
-   return match maybe_x {
-      Ok(x) => Some(x),
-      Err(_) => None
-   }
-}
